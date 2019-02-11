@@ -4,8 +4,8 @@ armbian-images-for-orangepi
 Uploaded DTS files for kernel and u-boot
 
 /orange-pi-4.20/arch/arm64/boot/dts/allwinner
-/u-boot/h6-hdmi-rebased-1/arch/arm/dts
 
+/u-boot/h6-hdmi-rebased-1/arch/arm/dts
 
 Please find attached the first Build of armbian for Orangepi3
 
