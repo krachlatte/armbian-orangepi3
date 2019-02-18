@@ -1,22 +1,21 @@
 diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
-index 6f11122f8..ce20b0476 100644
+index 6f11122f8..d972f65e3 100644
 --- a/arch/arm64/boot/dts/allwinner/Makefile
 +++ b/arch/arm64/boot/dts/allwinner/Makefile
-@@ -25,5 +25,6 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-prime.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-zero-plus.dtb
+@@ -26,4 +26,5 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-zero-plus.dtb
  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-orangepi-zero-plus2.dtb
  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-one-plus.dtb
-+dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
  dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-pine-h64.dtb
 -subdir-y	:= $(dts-dirs) overlay
 \ No newline at end of file
++dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h6-orangepi-3.dtb
 +subdir-y	:= $(dts-dirs) overlay
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
 new file mode 100644
-index 000000000..3f26fcf19
+index 000000000..f83a4a5a4
 --- /dev/null
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -0,0 +1,283 @@
+@@ -0,0 +1,285 @@
 +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
 +/*
 + * Copyright (c) 2018 Armbian
@@ -111,6 +110,7 @@ index 000000000..3f26fcf19
 +	phy-mode = "rgmii";
 +	phy-handle = <&ext_rgmii_phy>;
 +	phy-supply = <&reg_gmac_3v3>;
++        phy-supply = <&reg_aldo2>; 
 +	allwinner,rx-delay-ps = <200>;
 +	allwinner,tx-delay-ps = <200>;
 +	status = "okay";
@@ -177,6 +177,7 @@ index 000000000..3f26fcf19
 +				regulator-min-microvolt = <3300000>;
 +				regulator-max-microvolt = <3300000>;
 +				regulator-name = "vcc-ac200";
++                                regulator-enable-ramp-delay = <100000>; 
 +			};
 +
 +			reg_aldo3: aldo3 {
