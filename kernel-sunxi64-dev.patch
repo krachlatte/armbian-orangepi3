@@ -33,7 +33,7 @@ index 000000000..f83a4a5a4
 +
 +	aliases {
 +		serial0 = &uart0;
-+                ethernet0 = &emac;
++               ethernet0 = &emac;
 +	};
 +
 +	chosen {
@@ -110,7 +110,7 @@ index 000000000..f83a4a5a4
 +	phy-mode = "rgmii";
 +	phy-handle = <&ext_rgmii_phy>;
 +	phy-supply = <&reg_gmac_3v3>;
-+        phy-supply = <&reg_aldo2>; 
++	phy-supply = <&reg_aldo2>;
 +	allwinner,rx-delay-ps = <200>;
 +	allwinner,tx-delay-ps = <200>;
 +	status = "okay";
@@ -177,7 +177,7 @@ index 000000000..f83a4a5a4
 +				regulator-min-microvolt = <3300000>;
 +				regulator-max-microvolt = <3300000>;
 +				regulator-name = "vcc-ac200";
-+                                regulator-enable-ramp-delay = <100000>; 
++				regulator-enable-ramp-delay = <100000>;
 +			};
 +
 +			reg_aldo3: aldo3 {
@@ -301,3 +301,39 @@ index 000000000..f83a4a5a4
 +        phy-supply = <&reg_usb_vbus>;
 +        status = "okay";
 +};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+index 8fba99459..cdd89e4b7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+@@ -15,7 +15,7 @@
+
+        aliases {
+                serial0 = &uart0;
+-               ethernet0 = &emac;
++               ethernet0 = &emac;
+        };
+
+        chosen {
+@@ -92,7 +92,6 @@
+        phy-mode = "rgmii";
+        phy-handle = <&ext_rgmii_phy>;
+        phy-supply = <&reg_gmac_3v3>;
+-       phy-supply = <&reg_aldo2>;
+        allwinner,rx-delay-ps = <200>;
+        allwinner,tx-delay-ps = <200>;
+        status = "okay";
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+index 9496030ae..61e61b9b7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+@@ -470,7 +470,8 @@
+                };
+
+                emac: ethernet@5020000 {
+-                       compatible = "allwinner,sun50i-a64-emac";  // was "allwinner,sun50i-h6-emac";
++                        compatible = "allwinner,sun50i-h6-emmc",
++                                     "allwinner,sun50i-a64-emmc";
+                        syscon = <&syscon>;
+                        reg = <0x05020000 0x10000>;
+                        interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+

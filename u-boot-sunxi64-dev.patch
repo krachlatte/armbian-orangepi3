@@ -200,3 +200,5 @@ index 187818e..eb553fb 100644
  CONFIG_DEFAULT_DEVICE_TREE="sun50i-h6-orangepi-3"
  # CONFIG_SYS_MALLOC_CLEAR_ON_INIT is not set
 
+
+
