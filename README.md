@@ -1,10 +1,17 @@
 # armbian-orangepi3
 armbian-images-for-orangepi
 
-Userpatches for Uboot and Kernel, put tehm into this folder when trying to build
+Userpatches for Uboot and Kernel, put them into this folder below
 
-build/config/boards/orangepi3.wip
+<armbianfolder>/userpatches/u-boot/u-boot-sun50iw6/u-boot-sunxi64-dev.patch
+<armbianfolder>/userpatches/kernel/sunxi-dev/kernel-sunxi64-dev.patch
 
-Please find attached the first Build of armbian for Orangepi3
+also put in this file:
 
-Send logs to fix, will upload more once i got the Hardware
+<armbianfolder>/config/boards/orangepi3.wip
+
+then run ./compile.sh
+
+and then choose Show CSC/WIP/EOS/...
+
+
